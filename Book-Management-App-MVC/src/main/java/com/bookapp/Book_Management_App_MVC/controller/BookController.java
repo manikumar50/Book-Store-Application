@@ -1,5 +1,6 @@
 package com.bookapp.Book_Management_App_MVC.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -49,7 +50,7 @@ public class BookController
 	}
 	
 	@PostMapping("/update/{id}")
-	public String updateDetails(@PathVariable("id") int id, @ModelAttribute("Book") BookDetails book) throws Exception 
+	public String updateDetails(@PathVariable("id") int id,@ModelAttribute("Book") BookDetails book) throws Exception 
 	{
 		service.update(id,book);
 		return "redirect:/getAllBooks";
