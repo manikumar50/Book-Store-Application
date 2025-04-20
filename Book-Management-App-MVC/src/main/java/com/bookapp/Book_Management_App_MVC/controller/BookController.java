@@ -12,6 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bookapp.Book_Management_App_MVC.model.BookDetails;
 import com.bookapp.Book_Management_App_MVC.service.BookServiceInterface;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 @Controller
 public class BookController 
 {
@@ -19,9 +23,8 @@ public class BookController
 	private BookServiceInterface service;
 	
 	@GetMapping("/")
-	public String homePage()
-	{
-		return "index";
+	public String homePage() {
+        return "index";
 	}
 	
 	@GetMapping("/getAllBooks")
